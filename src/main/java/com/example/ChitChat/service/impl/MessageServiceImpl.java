@@ -1,4 +1,4 @@
-package com.example.service.ChitChat.impl;
+package com.example.ChitChat.service.impl;
 
 import java.util.List;
 import java.util.Optional;
