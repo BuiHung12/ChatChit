@@ -1,4 +1,4 @@
-package com.example.repository;
+package com.example.ChitChat.repository;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.example.model.Message;
+import com.example.ChitChat.model.Message;
 
 
 @Repository

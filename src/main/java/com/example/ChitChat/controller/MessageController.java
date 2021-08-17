@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.example.ChitChat.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.example.model.Message;
-import com.example.service.MessageService;
+import com.example.ChitChat.model.Message;
+import com.example.ChitChat.service.MessageService;
 
 
 @RestController

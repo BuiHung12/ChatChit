@@ -1,4 +1,4 @@
-package com.example.service.impl;
+package com.example.ChitChat.model;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,9 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.model.Message;
-import com.example.repository.MessageRepository;
-import com.example.service.MessageService;
+import com.example.ChitChat.model.Message;
+import com.example.ChitChat.repository.MessageRepository;
+import com.example.ChitChat.service.MessageService;
 
 
 @Service
