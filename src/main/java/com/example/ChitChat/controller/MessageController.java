@@ -71,4 +71,9 @@ public class MessageController {
 		 }
 		 return new ResponseEntity<>(messages, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value =  "/" , method = RequestMethod.GET)
+    public String testJspView() {
+        return "home";
+    }
 }
