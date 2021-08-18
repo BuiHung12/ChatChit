@@ -1,9 +1,9 @@
-package com.example.ChitChat.service;
+package com.example.chitchat.service;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.example.ChitChat.model.Message;
+import com.example.chitchat.model.Message;
 
 
 public interface MessageService {
