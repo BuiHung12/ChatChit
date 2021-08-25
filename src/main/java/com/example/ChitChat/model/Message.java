@@ -21,10 +21,10 @@ public class Message implements Serializable{
     private Long id;
     @Column(name="userid")
     private int user_id;
-    @Column(name="username")
-    private int username;
+    @Column(name="nickname")
+    private String nickname;
     @Column(name="content")
-    private int content;
+    private String content;
 	@Column(name="created_on", insertable=false)
     private Date created_on;
 
@@ -43,19 +43,19 @@ public class Message implements Serializable{
 		this.user_id = user_id;
 	}
 
-	public int getUsername() {
-		return username;
+	public String getNickname() {
+		return nickname;
 	}
 
-	public void setUsername(int username) {
-		this.username = username;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
-	public int getContent() {
+	public String getContent() {
 		return content;
 	}
 
-	public void setContent(int content) {
+	public void setContent(String content) {
 		this.content = content;
 	}
 

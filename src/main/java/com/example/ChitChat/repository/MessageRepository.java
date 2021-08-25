@@ -13,7 +13,7 @@ import com.example.chitchat.model.Message;
 @Repository
 public interface MessageRepository extends CrudRepository<Message, Long>{
 	
-	@Query("SELECT m FROM Message m WHERE LOWER(m.username) = LOWER(:username) ORDER BY m.id DESC")
-    public List<Message> find(@Param("username") String username);
+	@Query("SELECT m FROM Message m WHERE LOWER(m.nickname) = LOWER(:nickname) ORDER BY m.id DESC")
+    public List<Message> find(@Param("nickname") String nickname);
 
 }

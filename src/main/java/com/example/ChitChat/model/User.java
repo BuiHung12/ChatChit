@@ -15,47 +15,49 @@ public class User implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int user_id;
+	private Long user_id;
 	
 	@Column(name="username")
-	private int username;
+	private String username;
 	
 	@Column(name="password")
-	private int password;
+	private String password;
 	
 	@Column(name="nickname")
-	private int nickname;
+	private String nickname;
 
-	public int getUser_id() {
+	public Long getUser_id() {
 		return user_id;
 	}
 
-	public void setUser_id(int user_id) {
+	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
 	}
 
-	public int getUsername() {
+	public String getUsername() {
 		return username;
 	}
 
-	public void setUsername(int username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
-	public int getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(int password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public int getNickname() {
+	public String getNickname() {
 		return nickname;
 	}
 
-	public void setNickname(int nickname) {
+	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
+
+	
 	
 }
