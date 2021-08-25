@@ -19,14 +19,12 @@ public class Message implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-	@Column(name="username")
-    private String username;
-	@Column(name="password")
-    private String password;
-	@Column(name="messages")
-    private String messages;
-	@Column(name="status")
-    private Integer status;
+    @Column(name="userid")
+    private int user_id;
+    @Column(name="username")
+    private int username;
+    @Column(name="content")
+    private int content;
 	@Column(name="created_on", insertable=false)
     private Date created_on;
 
@@ -36,40 +34,29 @@ public class Message implements Serializable{
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	
+	public int getUser_id() {
+		return user_id;
 	}
 
-	public String getUsername() {
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+
+	public int getUsername() {
 		return username;
 	}
 
-	public void setUsername(String username) {
+	public void setUsername(int username) {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
+	public int getContent() {
+		return content;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getMessages() {
-		return messages;
-	}
-
-	public void setMessages(String messages) {
-		this.messages = messages;
-	}
-
-	public Integer getStatus() {
-		return status;
-	}
-
-	public void setStatus(Integer status) {
-		this.status = status;
+	public void setContent(int content) {
+		this.content = content;
 	}
 
 	public Date getCreated_on() {
@@ -78,6 +65,10 @@ public class Message implements Serializable{
 
 	public void setCreated_on(Date created_on) {
 		this.created_on = created_on;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public static long getSerialversionuid() {
