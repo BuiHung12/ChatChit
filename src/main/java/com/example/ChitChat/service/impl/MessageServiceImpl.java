@@ -56,7 +56,7 @@ public class MessageServiceImpl implements MessageService {
 
 	@Override
 	public List<UserChat> findUser(String username, String password) {
-		return userRepository.find(username, password);
+		return (List<UserChat>)userRepository.find(username, password);
 	}
 
 	@Override

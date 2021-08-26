@@ -29,8 +29,8 @@ public class MessageController {
 	
 	@RequestMapping(value = "/login",method = RequestMethod.POST)
     public ResponseEntity<List<UserChat>> createMessage(@RequestBody UserChat user, UriComponentsBuilder builder) {
-		//List<UserChat> users = messageService.findUser(user.getUsername(), user.getPassword());
-		List<UserChat> users = messageService.findAllUser();
+		List<UserChat> users = messageService.findUser(user.getUsername(), user.getPassword());
+		//List<UserChat> users = messageService.findAllUser();
 		if (users.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
