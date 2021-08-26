@@ -16,5 +16,6 @@ public interface MessageService {
     List<Message> findByUsername(String username);
     
     List<UserChat> findUser(String username, String password);
+    List<UserChat> findAllUser();
 
 }
