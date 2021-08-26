@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.example.chitchat.model.Message;
+import com.example.chitchat.model.UserChat;
 import com.example.chitchat.service.MessageService;
 
 
@@ -25,6 +26,15 @@ public class MessageController {
 	
 	@Autowired
 	private MessageService messageService;
+	
+	@RequestMapping(value = "/message/login",method = RequestMethod.POST)
+    public ResponseEntity<UserChat> createMessage(@RequestBody UserChat user, UriComponentsBuilder builder) {
+		Optional<UserChat> userRes = messageService.findByUserId(user.getUser_id());
+		if (userRes.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(userRes.get(), HttpStatus.CREATED);
+    }
 	
 	@RequestMapping(value = "/messages", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Message>> findAllProduct() {

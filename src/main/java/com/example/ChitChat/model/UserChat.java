@@ -11,10 +11,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USERCHAT")
-public class User implements Serializable{
+public class UserChat implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="userid")
 	private Long user_id;
 	
 	@Column(name="username")
@@ -58,6 +61,4 @@ public class User implements Serializable{
 		this.nickname = nickname;
 	}
 
-	
-	
 }

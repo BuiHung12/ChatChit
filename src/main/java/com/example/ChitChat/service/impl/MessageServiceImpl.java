@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.chitchat.model.Message;
+import com.example.chitchat.model.UserChat;
 import com.example.chitchat.repository.MessageRepository;
+import com.example.chitchat.repository.UserRepository;
 import com.example.chitchat.service.MessageService;
 
 
@@ -16,6 +18,9 @@ public class MessageServiceImpl implements MessageService {
 	
 	@Autowired
 	private MessageRepository messageRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	@Override
 	public Optional<Message> findLatestMessage(String username) {
@@ -47,5 +52,10 @@ public class MessageServiceImpl implements MessageService {
 	@Override
 	public List<Message> findByUsername(String username) {
 		return messageRepository.find(username);
+	}
+
+	@Override
+	public Optional<UserChat> findByUserId(Long userId) {
+		return userRepository.findById(userId);
 	}	
 }

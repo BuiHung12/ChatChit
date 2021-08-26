@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.chitchat.model.Message;
+import com.example.chitchat.model.UserChat;
 
 
 public interface MessageService {
@@ -13,5 +14,7 @@ public interface MessageService {
     void remove(Message message);
     Optional<Message> findById(Long id);
     List<Message> findByUsername(String username);
+    
+    Optional<UserChat> findByUserId(Long UserId);
 
 }
