@@ -27,7 +27,7 @@ public class MessageController {
 	@Autowired
 	private MessageService messageService;
 	
-	@RequestMapping(value = "/message/login",method = RequestMethod.POST)
+	@RequestMapping(value = "/login",method = RequestMethod.POST)
     public ResponseEntity<List<UserChat>> createMessage(@RequestBody UserChat user, UriComponentsBuilder builder) {
 		List<UserChat> users = messageService.findUser(user.getUsername(), user.getPassword());
 		if (users.isEmpty()) {
