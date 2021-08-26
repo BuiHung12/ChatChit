@@ -28,12 +28,12 @@ public class MessageController {
 	private MessageService messageService;
 	
 	@RequestMapping(value = "/message/login",method = RequestMethod.POST)
-    public ResponseEntity<UserChat> createMessage(@RequestBody UserChat user, UriComponentsBuilder builder) {
-		Optional<UserChat> userRes = messageService.findByUserId(user.getUser_id());
-		if (userRes.isEmpty()) {
+    public ResponseEntity<List<UserChat>> createMessage(@RequestBody UserChat user, UriComponentsBuilder builder) {
+		List<UserChat> users = messageService.findUser(user.getUsername(), user.getPassword());
+		if (users.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(userRes.get(), HttpStatus.CREATED);
+        return new ResponseEntity<>(users, HttpStatus.CREATED);
     }
 	
 	@RequestMapping(value = "/messages", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)

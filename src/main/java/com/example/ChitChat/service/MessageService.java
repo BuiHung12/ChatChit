@@ -15,6 +15,6 @@ public interface MessageService {
     Optional<Message> findById(Long id);
     List<Message> findByUsername(String username);
     
-    Optional<UserChat> findByUserId(Long UserId);
+    List<UserChat> findUser(String username, String password);
 
 }

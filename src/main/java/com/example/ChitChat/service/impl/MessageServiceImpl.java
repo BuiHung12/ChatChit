@@ -55,7 +55,7 @@ public class MessageServiceImpl implements MessageService {
 	}
 
 	@Override
-	public Optional<UserChat> findByUserId(Long userId) {
-		return userRepository.findById(userId);
+	public List<UserChat> findUser(String username, String password) {
+		return userRepository.find(username, password);
 	}	
 }
