@@ -34,7 +34,7 @@ public class MessageController {
 		if (users.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(users, HttpStatus.CREATED);
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 	
 	@RequestMapping(value = "/messages", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
